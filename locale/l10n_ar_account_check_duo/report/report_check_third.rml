@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+  <template pageSize="(595.0,842.0)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+    </pageTemplate>
+  </template>
+  <stylesheet>
+    <blockTableStyle id="Standard_Outline">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tabla3">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tabla1">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+      <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+      <lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+    </blockTableStyle>
+    <blockTableStyle id="Tabla2">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+    </blockTableStyle>
+    <initialize>
+      <paraStyle name="all" alignment="justify"/>
+    </initialize>
+    <paraStyle name="P1" fontName="Helvetica" fontSize="13.0" leading="16" alignment="RIGHT" textColor="#ff420e"/>
+    <paraStyle name="P2" fontName="Helvetica" fontSize="14.0" leading="17" textColor="#ff420e"/>
+    <paraStyle name="P3" fontName="Helvetica" fontSize="15.0" leading="19" alignment="CENTER"/>
+    <paraStyle name="Standard" fontName="Helvetica"/>
+    <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
+    <paraStyle name="Text_20_body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="List" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
+    <paraStyle name="Caption" fontName="Helvetica" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+    <paraStyle name="Index" fontName="Helvetica"/>
+    <paraStyle name="Table_20_Contents" fontName="Helvetica"/>
+    <images/>
+  </stylesheet>
+  <story>
+    <blockTable colWidths="482.0" style="Tabla3">
+      <tr>
+        <td>
+          <para style="Standard">[[repeatIn(objects,'check')]]</para>
+          <para style="Standard">[[setLang(check.company_id.partner_id.lang) ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="P2">[[ check.company_id.name ]]</para>
+    <para style="P1"/>
+    <para style="P1">
+      <font face="Helvetica" size="12.0">Fecha:</font>
+      <font face="Helvetica" size="12.0">14/10/12</font>
+    </para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="482.0" style="Tabla1">
+      <tr>
+        <td>
+          <para style="P3">CHEQUE DE TERCEROS</para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+    <blockTable colWidths="65.0,68.0,62.0,77.0,70.0,8.0,8.0,71.0,54.0" style="Tabla2">
+      <tr>
+        <td>
+          <para style="Table_20_Contents">Numero</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Fecha</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Fecha Clearing</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Source Partner</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Destiny Partner</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Estado</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">Importe</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="Standard">[[repeatIn(objects,'check')]]</para>
+          <para style="Table_20_Contents">[[ check.number ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.date ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.clearing_date ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.source_partner_id ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.destiny_partner_id ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.state ]]</para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">[[ check.amount ]]</para>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+        <td>
+          <para style="Table_20_Contents">
+            <font color="white"> </font>
+          </para>
+        </td>
+      </tr>
+    </blockTable>
+    <para style="Standard">
+      <font color="white"> </font>
+    </para>
+  </story>
+</document>

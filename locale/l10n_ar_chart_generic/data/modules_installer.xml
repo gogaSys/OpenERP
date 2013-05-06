@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C), 2012, OpenERP - Team de Localización Argentina.
+ https://launchpad.net/~openerp-l10n-ar-localization
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<openerp>
+    <data>
+        <record id="view_modules_ar_installer" model="ir.ui.view">
+            <field name="name">account.modules.ar.installer.form</field>
+            <field name="model">account.modules.ar.installer</field>
+            <field name="inherit_id" ref="base.res_config_view_base"/>
+            <field name="arch" type="xml">
+                <data>
+                    <form position="attributes" version="7.0">
+                        <attribute name="string">Argentine Localization Modules</attribute>
+                    </form>
+                    <group string="res_config_contents" position="replace">
+                        <group col="2">
+                            <field name="l10n_ar_invoice"/>
+                            <field name="l10n_ar_wsafip_fe"/>
+                            <field name="treasury"/>
+                        </group>
+                    </group>
+                </data>
+            </field>
+        </record>
+
+	<record id="action_modules_ar_installer" model="ir.actions.act_window">
+	  <field name="name">Argentine localization modules</field>
+	  <field name="res_model">account.modules.ar.installer</field>
+	  <field name="view_id" ref="view_modules_ar_installer"/>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+	</record>
+
+	<record id="modules_ar_installer_todo" model="ir.actions.todo">
+		<field name="action_id" ref="action_modules_ar_installer"/>
+		<field name="sequence">15</field>
+		<field name="type">automatic</field>
+	</record>
+    </data>
+</openerp>
+<!--
+     vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+-->

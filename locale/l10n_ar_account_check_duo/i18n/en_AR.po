@@ -1,0 +1,631 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_check_duo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-30 19:47+0000\n"
+"PO-Revision-Date: 2012-10-30 17:21-0300\n"
+"Last-Translator: s <poyo.ar@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: account_check_duo
+#: field:account.issued.check,clearing:0
+#: field:account.third.check,clearing:0
+msgid "Clearing"
+msgstr "Clearing"
+
+#. module: account_check_duo
+#: field:account.voucher,show_check_page:0
+msgid "Show Check Page"
+msgstr "Mostrar Listado de Cheques"
+
+#. module: account_check_duo
+#: field:account.check.dreject,reject_date:0
+#: field:account.check.hreject,reject_date:0
+#: field:account.issuedcheck.hreject,reject_date:0
+msgid "Reject Date"
+msgstr "Fecha Rechazo"
+
+#. module: account_check_duo
+#: selection:account.third.check,state:0
+msgid "Deposited"
+msgstr "Depositado"
+
+#. module: account_check_duo
+#: view:account.voucher:0
+msgid "Payment methods"
+msgstr "Metodos de Pagos"
+
+#. module: account_check_duo
+#: field:account.third.check,vat:0
+msgid "Vat"
+msgstr "CUIT"
+
+#. module: account_check_duo
+#: field:account.journal,use_issued_check:0
+#: field:account.voucher,use_issued_check:0
+msgid "Use Issued Checks"
+msgstr "Cheques Propios"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_check_sold
+msgid "account.check.sold"
+msgstr "account.check.sold"
+
+#. module: account_check_duo
+#: field:account.check.sold,sold_date:0
+msgid "Sold Date"
+msgstr "Fecha Venta"
+
+#. module: account_check_duo
+#: field:account.issued.check,amount:0
+msgid "Amount Check"
+msgstr "Monto"
+
+#. module: account_check_duo
+#: field:account.issued.check,company_id:0
+#: field:account.third.check,company_id:0
+msgid "Company"
+msgstr "Empresa"
+
+#. module: account_check_duo
+#: field:account.third.check,reject_debit_note_prov:0
+msgid "Reject Debit Note Prov"
+msgstr "Nota de Debito del Proveedor"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_check_hreject
+msgid "account.check.hreject"
+msgstr "account.check.hreject"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: view:account.voucher:0
+#: field:account.voucher,issued_check_ids:0
+#: model:ir.actions.act_window,name:account_check_duo.action_issued_check
+#: model:ir.ui.menu,name:account_check_duo.menu_treasury_issued_check
+msgid "Issued Checks"
+msgstr "Cheques Propios"
+
+#. module: account_check_duo
+#: field:account.journal,use_third_check:0
+#: field:account.voucher,use_third_check:0
+msgid "Use Third Checks"
+msgstr "Cheques de Terceros"
+
+#. module: account_check_duo
+#: view:res.partner.bank:0
+#: field:res.partner.bank,account_id:0
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,help:account_check_duo.action_debit_vendor_receipt
+msgid "Sales payment allows you to register the payments you receive from your customers. In order to record a payment, you must enter the customer, the payment method (=the journal) and the payment amount. OpenERP will propose to you automatically the reconciliation of this payment with the open invoices or sales receipts."
+msgstr "Sales payment allows you to register the payments you receive from your customers. In order to record a payment, you must enter the customer, the payment method (=the journal) and the payment amount. OpenERP will propose to you automatically the reconciliation of this payment with the open invoices or sales receipts."
+
+#. module: account_check_duo
+#: view:account.third.check:0
+#: field:account.third.check,source_partner_id:0
+msgid "Source Partner"
+msgstr "Empresa Origen"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: view:account.third.check:0
+msgid "Total Amount"
+msgstr "Total"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+#: view:account.voucher:0
+#: field:account.voucher,third_check_ids:0
+#: field:account.voucher,third_check_receipt_ids:0
+#: model:ir.actions.act_window,name:account_check_duo.action_third_check
+#: model:ir.ui.menu,name:account_check_duo.menu_treasury_third_check
+msgid "Third Checks"
+msgstr "Cheques de Terceros"
+
+#. module: account_check_duo
+#: constraint:account.journal:0
+msgid "Configuration error! The currency chosen should be shared by the default accounts too."
+msgstr "Configuration error! The currency chosen should be shared by the default accounts too."
+
+#. module: account_check_duo
+#: selection:account.issued.check,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: account_check_duo
+#: field:account.third.check,amount:0
+msgid "Check Amount"
+msgstr "Monto"
+
+#. module: account_check_duo
+#: field:account.issued.check,change_date:0
+#: field:account.third.check,change_date:0
+msgid "Change Date"
+msgstr "Fecha de Cambio"
+
+#. module: account_check_duo
+#: sql_constraint:account.journal:0
+msgid "The code of the journal must be unique per company !"
+msgstr "El código del diario debe ser único por empresa!"
+
+#. module: account_check_duo
+#: field:account.check.dreject,make_expense:0
+#: field:account.check.hreject,make_expense:0
+#: field:account.issuedcheck.hreject,make_expense:0
+msgid "Make Expenses ?"
+msgstr "Genera Gastos?"
+
+#. module: account_check_duo
+#: field:account.third.check,date_in:0
+msgid "Date In"
+msgstr "Fecha de Entrada"
+
+#. module: account_check_duo
+#: view:account.voucher:0
+msgid "Payment Information"
+msgstr "Información del Pago"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_check_duo
+#: field:account.issued.check,clearing_date:0
+#: field:account.third.check,clearing_date:0
+msgid "Clearing Date"
+msgstr "Fecha de Clearing"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:226
+#, python-format
+msgid "The associated journal force that the total amount is the same as the one paid with checks."
+msgstr "The associated journal force that the total amount is the same as the one paid with checks."
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Accounting Voucher"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:82
+#, python-format
+msgid "Journal must be fill"
+msgstr "El diario debe ser cargado."
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: field:account.issued.check,state:0
+#: view:account.third.check:0
+#: field:account.third.check,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:277
+#, python-format
+msgid "Vat number must be 11 numbers !"
+msgstr "El número de CUIT debe tener 11 números !"
+
+#. module: account_check_duo
+#: selection:account.issued.check,clearing:0
+#: selection:account.third.check,clearing:0
+msgid "72 hs"
+msgstr "72 hs"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:99
+#: code:addons/account_check_duo/account_check_duo.py:111
+#: code:addons/account_check_duo/account_check_duo.py:119
+#: code:addons/account_check_duo/account_check_duo.py:129
+#: code:addons/account_check_duo/account_check_duo.py:255
+#: code:addons/account_check_duo/account_check_duo.py:265
+#: code:addons/account_check_duo/account_check_duo.py:273
+#: code:addons/account_check_duo/account_check_duo.py:277
+#: code:addons/account_check_duo/account_check_duo.py:288
+#: code:addons/account_check_duo/account_check_duo.py:295
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_check_deposit
+msgid "Check Deposit"
+msgstr "Depositar Cheque"
+
+#. module: account_check_duo
+#: field:account.check.deposit,date:0
+msgid "Deposit Date"
+msgstr "Deposit Date"
+
+#. module: account_check_duo
+#: field:account.issued.check,reject_debit_note:0
+#: field:account.third.check,reject_debit_note:0
+msgid "Reject Debit Note"
+msgstr "Nota de Débito"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+msgid "In Holding"
+msgstr "En Cartera"
+
+#. module: account_check_duo
+#: help:account.issued.check,company_id:0
+#: help:account.third.check,company_id:0
+msgid "Company related to this Check"
+msgstr "Empresa relacionada con este cheque"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:225
+#, python-format
+msgid "Cannot Validate Voucher"
+msgstr "No se puede validar el cheque"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_check_deposit
+msgid "account.check.deposit"
+msgstr "account.check.deposit"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_check_dreject
+msgid "Rejected Deposited Check"
+msgstr "Rechazar Cheque Depositado"
+
+#. module: account_check_duo
+#: field:account.third.check,clearing_date_hasta:0
+msgid "Clearing Date Hasta"
+msgstr "Fecha de Clearing Hasta"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: field:account.issued.check,receiving_partner_id:0
+#: view:account.third.check:0
+#: field:account.third.check,destiny_partner_id:0
+msgid "Destiny Partner"
+msgstr "Empresa Destino"
+
+#. module: account_check_duo
+#: field:account.check.dreject,expense_amount:0
+#: field:account.check.hreject,expense_amount:0
+#: field:account.check.sold,expense_amount:0
+#: field:account.issuedcheck.hreject,expense_amount:0
+msgid "Expense Amount"
+msgstr "Importe de Gastos"
+
+#. module: account_check_duo
+#: field:account.issued.check,date:0
+msgid "Date Check"
+msgstr "Fecha de Emisión"
+
+#. module: account_check_duo
+#: selection:account.issued.check,state:0
+#: selection:account.third.check,state:0
+msgid "Hand-Rejected"
+msgstr "Entregado-Rechazado"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+msgid "Desde fecha Clearing"
+msgstr "Desde fecha Clearing"
+
+#. module: account_check_duo
+#: view:account.journal:0
+msgid "Check Configuration"
+msgstr "Configuración del Cheque"
+
+#. module: account_check_duo
+#: sql_constraint:account.issued.check:0
+msgid "The number must be unique!"
+msgstr "El número debe ser único!"
+
+#. module: account_check_duo
+#: field:account.journal,validate_only_checks:0
+msgid "Validate only Checks"
+msgstr "Validar solo cheques"
+
+#. module: account_check_duo
+#: field:account.issued.check,debit_date:0
+msgid "Date Debit"
+msgstr "Fecha de Débito"
+
+#. module: account_check_duo
+#: selection:account.issued.check,state:0
+#: selection:account.third.check,state:0
+msgid "Handed"
+msgstr "Entregado"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_check_dreject
+msgid "account.check.dreject"
+msgstr "account.check.dreject"
+
+#. module: account_check_duo
+#: selection:account.issued.check,state:0
+#: selection:account.third.check,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:99
+#: code:addons/account_check_duo/account_check_duo.py:295
+#, python-format
+msgid "The Check must be create on one payment !"
+msgstr "El Cheque debe ser creado en un pago!"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+msgid "Hasta fecha Clearing"
+msgstr "Hasta fecha Clearing"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:133
+#, python-format
+msgid "The check must be in holding state."
+msgstr "El Cheque debe estar en estado \"En Cartera\" "
+
+#. module: account_check_duo
+#: field:account.check.dreject,invoice_expense:0
+#: field:account.check.hreject,invoice_expense:0
+#: field:account.issuedcheck.hreject,invoice_expense:0
+msgid "Invoice Expense?"
+msgstr "Facturar los Gastos?"
+
+#. module: account_check_duo
+#: view:account.voucher:0
+#: model:ir.ui.menu,name:account_check_duo.menu_account_check
+msgid "Checks"
+msgstr "Cheques"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: field:account.issued.check,number:0
+#: view:account.third.check:0
+#: field:account.third.check,number:0
+msgid "Check Number"
+msgstr "Número Cheque"
+
+#. module: account_check_duo
+#: help:account.journal,validate_only_checks:0
+msgid "If marked, when validating a voucher, verifies that the total amounth of the voucher is the same as the checks used."
+msgstr "If marked, when validating a voucher, verifies that the total amounth of the voucher is the same as the checks used."
+
+#. module: account_check_duo
+#: selection:account.third.check,state:0
+msgid "Sold"
+msgstr "Vendido"
+
+#. module: account_check_duo
+#: field:account.third.check,date:0
+msgid "Check Date"
+msgstr "Fecha Cheque"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+msgid "Information "
+msgstr "Información"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+msgid "Issued Checks..."
+msgstr "Cheques Propios..."
+
+#. module: account_check_duo
+#: field:account.issued.check,user_id:0
+#: field:account.third.check,user_id:0
+msgid "User"
+msgstr "Usuario"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_debit_vendor_receipt
+msgid "Customer Debit Payment"
+msgstr "Customer Debit Payment"
+
+#. module: account_check_duo
+#: view:account.issued.check:0
+#: view:account.third.check:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_check_duo
+#: field:account.third.check,account_bank_id:0
+msgid "Destiny Account"
+msgstr "Cuenta destino"
+
+#. module: account_check_duo
+#: selection:account.third.check,state:0
+msgid "Dep-Rejected"
+msgstr "Depositado-Rechazado"
+
+#. module: account_check_duo
+#: view:account.third.check:0
+msgid "Third Checks..."
+msgstr "Cheques de Terceros..."
+
+#. module: account_check_duo
+#: field:account.check.dreject,expense_account:0
+#: field:account.check.hreject,expense_account:0
+#: field:account.check.sold,expense_account:0
+#: field:account.issuedcheck.hreject,expense_account:0
+msgid "Expense Account"
+msgstr "Cuenta de gastos"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:111
+#: code:addons/account_check_duo/account_check_duo.py:288
+#, python-format
+msgid "The Check must  be in draft state only for unlink !"
+msgstr "El Cheque debe estar en estado \"Borrador\" para ser eliminado !"
+
+#. module: account_check_duo
+#: selection:account.issued.check,clearing:0
+#: selection:account.third.check,clearing:0
+msgid "48 hs"
+msgstr "48 hs"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_issued_check
+msgid "Manage Checks Issued"
+msgstr "Manage Checks Issued"
+
+#. module: account_check_duo
+#: sql_constraint:account.invoice:0
+msgid "Invoice Number must be unique per Company!"
+msgstr "El número de Factura debe ser único por empresa!"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_third_check
+msgid "Manage Checks Third"
+msgstr "Manage Checks Third"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_issuedcheck_hreject
+msgid "account issued check hreject"
+msgstr "account issued check hreject"
+
+#. module: account_check_duo
+#: field:account.issued.check,issued:0
+msgid "Issued"
+msgstr "Propios"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Cuenta Bancaria"
+
+#. module: account_check_duo
+#: field:account.issued.check,voucher_id:0
+#: field:account.third.check,voucher_id:0
+msgid "Voucher"
+msgstr "Cheques"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_check_duo
+#: selection:account.third.check,state:0
+msgid "Holding"
+msgstr "En Cartera"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:119
+#: code:addons/account_check_duo/account_check_duo.py:255
+#, python-format
+msgid "Ckeck Number must be 8 numbers !"
+msgstr "El número de cheque debe ser de 8 dígitos !"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_check_issue_hrejected
+msgid "Reject Handed Checks"
+msgstr "Rechazar  Cheques Entregados"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:133
+#, python-format
+msgid "State!"
+msgstr "Estado!"
+
+#. module: account_check_duo
+#: model:ir.model,name:account_check_duo.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/wizard_issued/check_issued_hreject.py:100
+#: code:addons/account_check_duo/wizard_third/check_dreject.py:96
+#: code:addons/account_check_duo/wizard_third/check_hreject.py:150
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: account_check_duo
+#: field:account.issued.check,account_bank_id:0
+msgid "Account Bank"
+msgstr "Cuenta Bancaria"
+
+#. module: account_check_duo
+#: help:account.journal,use_issued_check:0
+msgid "Allow to user Issued Checks in associated vouchers."
+msgstr "Allow to user Issued Checks in associated vouchers."
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_check_sold
+msgid "Check Sold"
+msgstr "Cheque Vendido"
+
+#. module: account_check_duo
+#: help:account.journal,use_third_check:0
+msgid "Allow to user Third Checks in associated vouchers."
+msgstr "Allow to user Third Checks in associated vouchers."
+
+#. module: account_check_duo
+#: field:account.third.check,bank_id:0
+msgid "Bank"
+msgstr "Banco"
+
+#. module: account_check_duo
+#: field:account.check.deposit,bank_account_id:0
+#: field:account.check.sold,bank_account_id:0
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:129
+#: code:addons/account_check_duo/account_check_duo.py:265
+#, python-format
+msgid "Clearing date must be greater than check date"
+msgstr "Fecha de Clearing debe ser mayor a la fecha del cheque"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_check_duo.py:273
+#, python-format
+msgid "Vat number must be not null !"
+msgstr "El Número de CUIT no puede estar vacio !"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/wizard_issued/check_issued_hreject.py:100
+#: code:addons/account_check_duo/wizard_third/check_dreject.py:97
+#: code:addons/account_check_duo/wizard_third/check_hreject.py:150
+#, python-format
+msgid "You must assign expense account and amount !"
+msgstr "Debe asignar la cuenta de gastos y el importe "
+
+#. module: account_check_duo
+#: selection:account.issued.check,clearing:0
+#: selection:account.third.check,clearing:0
+msgid "24 hs"
+msgstr "24 hs"
+
+#. module: account_check_duo
+#: view:account.voucher:0
+msgid "Metodos de Cobro"
+msgstr "Metodos de Cobro"
+
+#. module: account_check_duo
+#: code:addons/account_check_duo/account_voucher.py:82
+#, python-format
+msgid "ATENTION !"
+msgstr "ATENCION !"
+
+#. module: account_check_duo
+#: sql_constraint:account.journal:0
+msgid "The name of the journal must be unique per company !"
+msgstr "El nombre del diario debe ser único por empresa !"
+
+#. module: account_check_duo
+#: model:ir.actions.act_window,name:account_check_duo.action_check_hrejected
+msgid "Rejected Handed Checks"
+msgstr "Rechazar Cheques Entregados"
+

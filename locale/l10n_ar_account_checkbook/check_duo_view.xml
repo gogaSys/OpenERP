@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_check_duo_form" model="ir.ui.view">
+            <field name="name">check.duo.form</field>
+            <field name="model">account.issued.check</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="l10n_ar_account_check_duo.view_account_issued_check_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="/form/field[@name='account_bank_id']" position="replace">   
+                <field name="checkbook_id" on_change="onchange_checkbook_id(number,checkbook_id)"  domain="[('state','=','active')]"/> 
+            </xpath>   
+            </field>
+        </record>
+
+    </data>
+</openerp>

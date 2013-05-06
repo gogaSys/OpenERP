@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"id","name","model_id/id","group_id/id","perm_write","perm_read","perm_create","perm_unlink"
+"access_account_treasury_manager","treasury_accountant","treasury.model_account_treasury","account.group_account_user","True","True","True","True"
+"access_account_treasury_user","trasury_invoice","treasury.model_account_treasury","account.group_account_invoice","True","True","True",""
+"access_account_treasury_report_manager","treasury_payments","treasury.model_account_treasury","account_payment.group_account_payment","True","True","True",""

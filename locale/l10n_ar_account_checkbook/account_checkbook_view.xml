@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_account_checkbook_search" model="ir.ui.view">
+            <field name="name">account.checkbook.search</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Checkbooks">
+                    <field name="name"/>
+                    <field name="account_bank_id"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_account_checkbook_tree" model="ir.ui.view">
+            <field name="name">account.checkbook.tree</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Checkbooks">
+                    <field name="name"/>
+                    <field name="range_desde"/>
+                    <field name="range_hasta"/>
+                    <field name="actual_number"/>
+                    <field name="account_bank_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_account_checkbook_form" model="ir.ui.view">
+            <field name="name">account.checkbook.form</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Checkbooks" > 
+                    <group col="2" colspan="2" >
+                        <field name="name"/>  
+                        <field name="account_bank_id"/>  
+                        <separator string="Ranges" colspan="6" />
+                        <field name="range_desde" on_change="onchange_desde(range_desde,actual_number)"/>
+                        <field name="range_hasta" on_change="onchange_hasta(range_desde,range_hasta)"/>
+                        <field name="actual_number"/>
+                    </group>
+                    <separator  colspan="6" />
+                    <field name="state" widget="statusbar" colspan="8"/>
+
+                    <group colspan="4" col="3"> 
+						<button name="wkf_active" string="In Use"  states="draft"/>
+						<button name="wkf_used" string="Used"  states="active"/>
+					</group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_account_checkbook_form" model="ir.actions.act_window">
+            <field name="name">Checkbooks</field>
+            <field name="res_model">account.checkbook</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_account_checkbook_search"/>
+        </record>
+        
+       <menuitem action="action_account_checkbook_form" id="menu_action_account_checkbook_form" parent="account.menu_configuration_misc" sequence="100"/>
+ 
+    </data>
+</openerp>        

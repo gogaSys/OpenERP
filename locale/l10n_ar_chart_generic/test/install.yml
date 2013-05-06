@@ -1,0 +1,16 @@
+- Install Generic Chart Argentina template
+- !record {model: wizard.multi.charts.accounts, id: ri_chart_wizard }:
+    chart_template_id: ri_a_root
+
+- Create accounts
+- !python {model: wizard.multi.charts.accounts}: |
+    self.execute(cr, uid, [ref('ri_chart_wizard')])
+
+- Check if ACTIVO exists as account.
+- !assert {model: account.account, search: "[('name','=','ACTIVO')]", string: Check Account Exists}:
+  - code == '1*'
+
+- Check if TAX exists as tax.
+- !assert {model: account.tax, search: "[('name','=','IVA Ventas 10.5%')]", string: Check Account Exists}:
+  - type == 'percent'
+

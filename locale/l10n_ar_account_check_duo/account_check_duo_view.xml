@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <!-- crea el menu principal-->
+    
+        <menuitem id="menu_account_check" name="Checks" sequence="100"
+            parent="account.menu_finance_bank_and_cash"  />
+        
+            
+    <!--  Issued Check -->
+        <record model="ir.ui.view" id="view_account_issued_check_tree">
+            <field name="name">account.issued.check.tree</field>
+            <field name="model">account.issued.check</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="blue:state == 'draft';black:state in ('handed');red:state == 'hrejected';gray:state == 'cancel'" string="Issued Checks">
+                    <field name="number"/>
+                    <field name="date"/>
+                    <field name="clearing_date"/>
+                    <field name="receiving_partner_id"/>
+                    <field name="account_bank_id"/>
+                    <field name="amount" sum="Total Amount"/>
+                    <field name="change_date"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+                  
+                
+        <record model="ir.ui.view" id="view_account_issued_check_form">
+            <field name="name">account.issued.check.form</field>
+            <field name="model">account.issued.check</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Issued Checks">
+                    <separator string= "Issued Checks" colspan="4"/> 
+                    <field name="account_bank_id"/>
+                    <field name="number" on_change="onchange_number(number)"/>
+                    <field name="amount"/>
+                    <field name="date"/>
+                    <field name="clearing_date" on_change="onchange_clearing_date(date,clearing_date)"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection" colspan="2"/>
+                    <separator  colspan="8"/>
+                    <field name="debit_date"/>
+                    <field name="state" widget="statusbar" colspan="8"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_issued_checks_search">
+            <field name="name">issued.check.search</field>
+            <field name="model">account.issued.check</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Issued Checks...">
+                    <group colspan='4'>
+                        <filter string="Date" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'date'}"/>
+                        <filter string="Partner" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'receiving_partner_id'}"/>
+                        <filter string="State" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                    <separator  colspan="8"/>
+                    <group colspan='4'>
+                        <field name="number" select="1" string="Check Number"/>
+                        <field name="receiving_partner_id" select="1" string="Destiny Partner"/>
+                        <field name="state" select="1" string="State"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- mode="month" --> 
+        <record model="ir.ui.view" id="view_account_issued_check_calendar">
+            <field name="name">account.issued.check.calendar</field>
+            <field name="model">account.issued.check</field>
+            <field name="type">calendar</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Issued Checks" 
+                          date_start="clearing_date" 
+                          color="receiving_partner_id">
+                    <field name="amount" />
+                    <field name="receiving_partner_id" />
+                </calendar>
+            </field>
+        </record>
+    
+
+        
+        
+        <!-- Issued Check Menu -->
+        <record model="ir.actions.act_window" id="action_issued_check">
+            <field name="name">Issued Checks</field>
+            <field name="res_model">account.issued.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+           <!-- <field name="search_view_id" ref="view_issued_checks_search"/>-->
+        </record>
+        
+        <menuitem
+            action="action_issued_check"
+            id="menu_treasury_issued_check"
+            name="Issued Checks"
+            parent="menu_account_check"/> 
+            
+            
+
+        <!-- Third Check -->
+        <record model="ir.ui.view" id="view_account_third_check_tree">
+            <field name="name">account.third.check.tree</field>
+            <field name="model">account.third.check</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="blue:state == 'draft';black:state in ('handed','deposited','sold');red:state in ('hrejected','drejected');gray:state == 'cancel'" string="Third Checks">
+                    <field name="number"/>
+                    <field name="date"/>
+                    <field name="clearing_date"/>
+                    <field name="source_partner_id"/>
+                    <field name="bank_id"/>
+                    <field name="destiny_partner_id"/>
+                    <field name="amount" sum="Total Amount"/>
+                    <field name="change_date"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_account_third_check_form">
+            <field name="name">account.third.check.form</field>
+            <field name="model">account.third.check</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Third Checks">
+                    <separator string= "Third Checks" colspan="4"/> 
+                    <field name="number" on_change="onchange_number(number)"/>
+                    <field name="amount"/>
+                    <field name="date"/>
+                    <field name="bank_id"/>
+                    <field name="clearing_date" on_change="onchange_clearing_date(date,clearing_date)"/>
+                    <field name="clearing"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection" colspan="2"/> 
+                    <separator  colspan="8"/>
+                    <field name="source_partner_id" readonly="1"/>
+                    <field name="vat" on_change="onchange_vat(vat)"/>
+                    <field name="date_in"/>
+                    <separator string="Information " colspan="8"/>
+                    <field name="state" widget="statusbar" colspan="8"/>
+                </form>
+            </field>
+        </record>
+
+
+
+       <record id="view_third_checks_search" model="ir.ui.view">
+            <field name="name">third.check.search</field>
+            <field name="model">account.third.check</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Third Checks...">
+                    <group colspan='4'>
+                        <filter string="Date" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'date'}"/>
+                        <filter string="Source Partner" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'source_partner_id'}"/>
+                        <filter string="Destiny Partner" icon="terp-gtk-jump-to-rtl"
+                            domain="[]" context="{'group_by':'destiny_partner_id'}"/>
+                         <filter icon="terp-document-new" name="holding"
+                            string="In Holding" domain="[('state','=','holding')]"/>
+                    </group>
+                    <separator  colspan="8"/>
+                    <group colspan='4'>
+                        <field name="number" select="1" string="Check Number"/>
+                        <field name="destiny_partner_id" select="1" string="Destiny Partner"/>
+                        <field name="state" select="1" string="State"/>
+                        <field name="clearing_date" string= "Desde fecha Clearing" select="1"/>
+                        <field name="clearing_date_hasta" string= "Hasta fecha Clearing" select="1"/>
+                    </group>
+                    <separator  colspan="8"/>
+                </search>
+            </field>
+        </record>
+
+<!-- day_length="24"-->
+        <record model="ir.ui.view" id="view_account_third_check_calendar">
+            <field name="name">account.third.check.calendar</field>
+            <field name="model">account.third.check</field>
+            <field name="type">calendar</field>
+            <field name="priority" eval="2"/>
+            <field name="arch" type="xml">
+                <calendar string="Third Checks" 
+                          date_start="clearing_date" 
+                          color="source_partner_id">
+                    <field name="amount" />
+                    <field name="source_partner_id" />
+                </calendar>
+            </field>
+        </record>
+        
+    
+
+       <!-- Third Check Menu -->
+        <record model="ir.actions.act_window" id="action_third_check">
+            <field name="name">Third Checks</field>
+            <field name="res_model">account.third.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+           <!-- <field name="search_view_id" ref="view_third_checks_search"/>-->
+        </record>
+        
+        <menuitem
+            action="action_third_check"
+            id="menu_treasury_third_check"
+            name="Third Checks"
+            parent="menu_account_check"/> 
+            
+    </data>
+</openerp>
